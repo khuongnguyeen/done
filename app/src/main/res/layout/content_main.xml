@@ -185,18 +185,40 @@
 
                     </LinearLayout>
 
+
+
                     <FrameLayout
-                        android:id="@+id/native_container"
+                        android:id="@+id/in_ads"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                        <LinearLayout
+                            android:id="@+id/native_ads_container_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:id="@+id/native_loading_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                >
+                                <include layout="@layout/loading_ad_big" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/native_ad_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                />
+
+                        </LinearLayout>
+                    </FrameLayout>
 
 
                     <LinearLayout

@@ -110,7 +110,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@id/native_ads_container_layout"
+        app:layout_constraintBottom_toTopOf="@id/in_ads"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -123,29 +123,38 @@
             tools:layout_editor_absoluteX="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/native_ads_container_layout"
+
+    <FrameLayout
+        android:id="@+id/in_ads"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:id="@+id/native_loading_layout_2"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:id="@+id/native_ads_container_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp">
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
 
+            <FrameLayout
+                android:id="@+id/native_loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                >
+                <include layout="@layout/loading_ad" />
+            </FrameLayout>
 
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/native_ad_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
-        <FrameLayout
-            android:id="@+id/native_ad_container_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

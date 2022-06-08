@@ -242,15 +242,5 @@
 
     <string name="you_have_not_selected_any_photos_yet" translatable="false">You have not selected any photos yet</string>
     <string name="back_to_home" translatable="false">Back to home</string>
-    
-    <string name="applovin_sdk_key" translatable="false">TndDWndTkyTTcxDyePU40iwlezff9xVe_dNEatx6mFG2N3hkezhZmaJfWBIXLUw8DTLzffBewS7TMLsIB1_uSd</string>
-
-    <string name="applovin_interstitial_main_ids" translatable="false">10d5e4142607ad59</string>
-    <string name="applovin_small_native_ids" translatable="false">b84dc9cac8eda4d4</string>
-    <string name="applovin_banner_ids" translatable="false">eba35c18d818c6bb</string>
-    <string name="applovin_interstitial_splash_ids" translatable="false">10d5e4142607ad59</string>
-    <string name="applovin_splash_native_ids" translatable="false">b84dc9cac8eda4d4</string>
-
-
 
 </resources>

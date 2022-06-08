@@ -6,25 +6,19 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.pedant.SweetAlert.SweetAlertDialog.*
 import com.all.me.io.helpers.utils.FileUtility
-import com.applovin.mediation.MaxAd
-import com.applovin.mediation.MaxError
-import com.applovin.mediation.nativeAds.MaxNativeAdView
 import com.tools.files.myreader.R
 import com.tools.files.myreader.adapter.RecyclerViewAdapter
-import com.tools.files.myreader.adsconfig.LovinBannerAds
-import com.tools.files.myreader.adsconfig.LovinInterstitialAds
-import com.tools.files.myreader.adsconfig.callbacks.LovinInterstitialOnCallBack
-import com.tools.files.myreader.adsconfig.callbacks.LovinNativeCallBack
-import com.tools.files.myreader.base.App
+import io.me.ndk.adsconfig.LovinCoverAds
 import com.tools.files.myreader.base.BaseActivity
 import com.tools.files.myreader.ulti.Common.capitalizeString
 import com.tools.files.myreader.ulti.Common.showDialogSweet
 import com.tools.files.myreader.ulti.Common.sortFile
+import io.me.ndk.adsconfig.util.Utils
+import io.me.ndk.adsconfig.util.Utils.lovinCoverAds
 import kotlinx.android.synthetic.main.fragment_file_list.*
 import java.io.File
 import java.util.*
@@ -34,7 +28,6 @@ class FileListActivity : BaseActivity() {
     private var fileType: String? = null
     private var mFoodList = mutableListOf<Any>()
     private var mSearchList = mutableListOf<Any>()
-    lateinit var lovinBannerAds: LovinBannerAds
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,35 +36,9 @@ class FileListActivity : BaseActivity() {
         initView()
         val editTextSearch = findViewById<EditText>(R.id.edt_activity_main__search2)
         editTextSearch.addTextChangedListener(textWatcher)
-
-        lovinBannerAds = LovinBannerAds(this)
-
+        lovinCoverAds = LovinCoverAds(this)
         // load small native
-
-        lovinBannerAds.loadNative(native_ads_container_layout,
-            native_ad_container_2,
-            native_loading_layout_2,
-            getString(R.string.applovin_small_native_ids),
-            true,
-            false,
-            object : LovinNativeCallBack {
-                override fun onNativeAdLoaded(nativeAdView: MaxNativeAdView?, ad: MaxAd) {
-                    Toast.makeText(this@FileListActivity,"AdLoaded",Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onNativeAdLoadFailed(adUnitId: String, error: MaxError) {
-                    Toast.makeText(this@FileListActivity,"AdLoadFailed",Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onNativeAdClicked(ad: MaxAd) {
-                    Toast.makeText(this@FileListActivity,"AdClicked",Toast.LENGTH_SHORT).show()
-                }
-
-
-            })
-
-
-
+        Utils.loadNativeBan(this,getString(io.me.ndk.R.string.applovin_small_native_ids),native_ads_container_layout, native_ad_container, native_loading_layout)
     }
 
     private val textWatcher: TextWatcher = object : TextWatcher {

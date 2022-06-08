@@ -1,4 +1,4 @@
-package com.tools.files.myreader.adsconfig
+package io.me.ndk.adsconfig
 
 
 import android.app.Activity
@@ -16,13 +16,14 @@ import com.applovin.mediation.ads.MaxAdView
 import com.applovin.mediation.nativeAds.MaxNativeAdListener
 import com.applovin.mediation.nativeAds.MaxNativeAdLoader
 import com.applovin.mediation.nativeAds.MaxNativeAdView
-import com.tools.files.myreader.R
-import com.tools.files.myreader.adsconfig.GeneralUtils.isInternetConnected
-import com.tools.files.myreader.adsconfig.callbacks.LovinBannerCallBack
-import com.tools.files.myreader.adsconfig.callbacks.LovinNativeCallBack
+import com.applovin.mediation.nativeAds.MaxNativeAdViewBinder
+import io.me.ndk.R
+import io.me.ndk.adsconfig.GeneralUtils.isInternetConnected
+import io.me.ndk.adsconfig.callbacks.LovinBannerCallBack
+import io.me.ndk.adsconfig.callbacks.LovinNativeCallBack
 
 
-class LovinBannerAds(activity: Activity) {
+class LovinCoverAds(activity: Activity) {
 
     private var adViewBanner: MaxAdView? = null
     private var nativeAdLoader: MaxNativeAdLoader? = null
@@ -120,11 +121,8 @@ class LovinBannerAds(activity: Activity) {
         adViewBanner?.destroy()
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun loadNative(
-        adsContainerLayout: LinearLayout,
-        nativeAdContainer: FrameLayout,
-        loadingFrameLayout: FrameLayout,
+        adsContainerLayout: LinearLayout, nativeAdContainer: FrameLayout, loadingFrameLayout: FrameLayout,
         lovinNativeIds: String,
         isRemoteConfigActive: Boolean,
         isAppPurchased: Boolean,
@@ -146,7 +144,6 @@ class LovinBannerAds(activity: Activity) {
 
                         // Save ad for cleanup.
                         nativeAd = ad
-
                         // Add ad view to view.
                         nativeAdContainer.removeAllViews()
                         nativeAdContainer.addView( nativeAdView )

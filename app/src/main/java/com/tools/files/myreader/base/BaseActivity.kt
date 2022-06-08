@@ -18,8 +18,8 @@ import com.artifex.sonui.SplashActivity
 import com.tools.files.myreader.BuildConfig
 import com.tools.files.myreader.R
 import com.tools.files.myreader.adapter.RecyclerViewAdapter
-import com.tools.files.myreader.adsconfig.LovinInterstitialAds
-import com.tools.files.myreader.adsconfig.callbacks.LovinInterstitialOnCallBack
+import io.me.ndk.adsconfig.LovinInterstitialAds
+import io.me.ndk.adsconfig.callbacks.LovinInterstitialOnCallBack
 import com.tools.files.myreader.interfaces.ItemFileClickListener
 import com.tools.files.myreader.ulti.Action
 import com.tools.files.myreader.ulti.Common
@@ -31,16 +31,16 @@ abstract class BaseActivity : AppCompatActivity(), ItemFileClickListener {
 
     var mIoIOnTemClickListener: ItemFileClickListener? = null
     var adapter: RecyclerViewAdapter? = null
-    lateinit var lovinInterstitialAds: LovinInterstitialAds
+    lateinit var lovinInterstitialAds2: LovinInterstitialAds
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mIoIOnTemClickListener = this
-        lovinInterstitialAds = LovinInterstitialAds(this)
+        lovinInterstitialAds2 = LovinInterstitialAds(this)
 
         // load interstitial ads
-        lovinInterstitialAds.loadShowAndLoadInterstitialAd(getString(R.string.applovin_interstitial_main_ids),
+        lovinInterstitialAds2.loadShowAndLoadInterstitialAd(getString(R.string.applovin_interstitial_main_ids),
             true,
             false,object: LovinInterstitialOnCallBack {
                 override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
@@ -66,7 +66,7 @@ abstract class BaseActivity : AppCompatActivity(), ItemFileClickListener {
     }
 
     override fun onItemClick(file: File?) {
-        lovinInterstitialAds.showInterstitialAds()
+        lovinInterstitialAds2.showInterstitialAds()
         Common.callOfficeActivity(this@BaseActivity, file?.path!!)
 
     }

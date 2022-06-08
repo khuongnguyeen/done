@@ -186,9 +186,8 @@ dependencies {
     implementation 'com.github.tejpratap46:PDFCreatorAndroid:3.0.2'
     implementation 'com.github.realpacific:click-shrink-effect:1.0'
 
-    // AppLovin SDK
-    implementation("com.applovin:applovin-sdk:11.3.3")
 
 
+    implementation project(path: ':ndk')
 
 }

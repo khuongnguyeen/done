@@ -26,9 +26,9 @@ import com.suddenh4x.ratingdialog.preferences.RatingThreshold
 import com.tools.files.myreader.BuildConfig
 import com.tools.files.myreader.R
 import com.tools.files.myreader.adapter.RecyclerViewAdapter
-import com.tools.files.myreader.adsconfig.LovinBannerAds
-import com.tools.files.myreader.adsconfig.LovinInterstitialAds
-import com.tools.files.myreader.adsconfig.callbacks.LovinInterstitialOnCallBack
+import io.me.ndk.adsconfig.LovinCoverAds
+import io.me.ndk.adsconfig.LovinInterstitialAds
+import io.me.ndk.adsconfig.callbacks.LovinInterstitialOnCallBack
 import com.tools.files.myreader.base.App.Companion.count
 import com.tools.files.myreader.base.BaseActivity
 import com.tools.files.myreader.customview.OnSingleClickListener
@@ -36,6 +36,7 @@ import com.tools.files.myreader.internal.Statics
 import com.tools.files.myreader.ocr.CameraActivity
 import com.tools.files.myreader.ulti.Action
 import com.tools.files.myreader.ulti.Common
+import io.me.ndk.adsconfig.util.Utils
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.Observer
@@ -44,6 +45,10 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.content_main.native_ad_container
+import kotlinx.android.synthetic.main.content_main.native_ads_container_layout
+import kotlinx.android.synthetic.main.content_main.native_loading_layout
+import kotlinx.android.synthetic.main.fragment_file_list.*
 import kotlinx.android.synthetic.main.item_main_2.*
 import kotlinx.android.synthetic.main.item_toolmain.*
 import java.io.File
@@ -53,7 +58,7 @@ import kotlin.system.exitProcess
 @Suppress("DEPRECATION")
 class MainActivity : BaseActivity() {
     val data = mutableListOf<File>()
-    private lateinit var lovinBannerAds: LovinBannerAds
+    lateinit var lovinInterstitialAds: LovinInterstitialAds
 
     companion object {
         private const val REQUEST_CAMERA_PERMISSIONS = 273
@@ -65,31 +70,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         initView()
         lovinInterstitialAds = LovinInterstitialAds(this)
-        lovinBannerAds = LovinBannerAds(this)
-        // load interstitial ads
-        lovinInterstitialAds.loadShowAndLoadInterstitialAd(getString(R.string.applovin_interstitial_main_ids),
-            true,
-            false,object: LovinInterstitialOnCallBack {
-                override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
-                }
-
-                override fun onAdLoaded(maxAd: MaxAd?) {
-                }
-
-                override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
-                }
-
-                override fun onAdDisplayed(maxAd: MaxAd?) {
-                }
-
-                override fun onAdClicked(maxAd: MaxAd?) {
-                }
-
-                override fun onAdHidden(maxAd: MaxAd?) {
-                }
-
-
-            })
+        Utils.loadNativeBan(this,getString(io.me.ndk.R.string.applovin_small_native_ids),native_ads_container_layout, native_ad_container, native_loading_layout)
     }
 
     private fun initView() {
@@ -271,16 +252,51 @@ class MainActivity : BaseActivity() {
 
     private fun openFile(type: String) {
         lovinInterstitialAds.showInterstitialAds()
-        Common.pushEventAnalytics("view_$type")
-        val intent = Intent()
-        if (type == "Favourite") {
-            intent.setClass(this, FragmentActivity::class.java)
-        } else {
-            intent.setClass(this, FileListActivity::class.java)
-        }
-        intent.putExtra("type", type)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(intent)
+        lovinInterstitialAds.loadShowAndLoadInterstitialAd(getString(R.string.applovin_interstitial_main_ids),
+            true,
+            false,object: LovinInterstitialOnCallBack {
+                override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
+                }
+
+                override fun onAdLoaded(maxAd: MaxAd?) {
+                }
+
+                override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
+
+                    Common.pushEventAnalytics("view_$type")
+                    val intent = Intent()
+                    if (type == "Favourite") {
+                        intent.setClass(this@MainActivity, FragmentActivity::class.java)
+                    } else {
+                        intent.setClass(this@MainActivity, FileListActivity::class.java)
+                    }
+                    intent.putExtra("type", type)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                }
+
+                override fun onAdDisplayed(maxAd: MaxAd?) {
+                }
+
+                override fun onAdClicked(maxAd: MaxAd?) {
+                }
+
+                override fun onAdHidden(maxAd: MaxAd?) {
+                    Common.pushEventAnalytics("view_$type")
+                    val intent = Intent()
+                    if (type == "Favourite") {
+                        intent.setClass(this@MainActivity, FragmentActivity::class.java)
+                    } else {
+                        intent.setClass(this@MainActivity, FileListActivity::class.java)
+                    }
+                    intent.putExtra("type", type)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                }
+
+
+            })
+
     }
 
     @SuppressLint("SetTextI18n")

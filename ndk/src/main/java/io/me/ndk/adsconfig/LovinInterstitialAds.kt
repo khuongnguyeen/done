@@ -1,4 +1,4 @@
-package com.tools.files.myreader.adsconfig
+package io.me.ndk.adsconfig
 
 import android.app.Activity
 import android.os.Build
@@ -8,8 +8,8 @@ import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxInterstitialAd
-import com.tools.files.myreader.adsconfig.GeneralUtils.isInternetConnected
-import com.tools.files.myreader.adsconfig.callbacks.LovinInterstitialOnCallBack
+import io.me.ndk.adsconfig.GeneralUtils.isInternetConnected
+import io.me.ndk.adsconfig.callbacks.LovinInterstitialOnCallBack
 
 
 class LovinInterstitialAds(activity: Activity) {
@@ -81,7 +81,6 @@ class LovinInterstitialAds(activity: Activity) {
     }
 
     // load show and load strategy
-    @RequiresApi(Build.VERSION_CODES.M)
     fun loadShowAndLoadInterstitialAd(
         lovinInterstitialIds: String,
         isRemoteConfigActive: Boolean,

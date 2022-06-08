@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -14,28 +15,26 @@ import com.all.me.io.helpers.utils.FileUtility
 import com.all.me.io.helpers.utils.StorageUtils
 import com.applovin.mediation.MaxAd
 import com.applovin.mediation.MaxError
-import com.applovin.mediation.nativeAds.MaxNativeAdView
-import com.google.android.gms.ads.LoadAdError
 import com.tools.files.myreader.R
-import com.tools.files.myreader.adsconfig.LovinBannerAds
-import com.tools.files.myreader.adsconfig.LovinInterstitialAds
-import com.tools.files.myreader.adsconfig.callbacks.LovinInterstitialOnCallBack
+import io.me.ndk.adsconfig.LovinCoverAds
+import io.me.ndk.adsconfig.LovinInterstitialAds
+import io.me.ndk.adsconfig.callbacks.LovinInterstitialOnCallBack
 import com.tools.files.myreader.base.App.Companion.checkOne
 import com.tools.files.myreader.ulti.Action.SHORT_CUT_FILE_NAME
 import com.tools.files.myreader.ulti.Action.SHORT_CUT_PAGE_NUM
 import com.tools.files.myreader.ulti.SharedPreferencesUtility
 import com.tools.files.myreader.ulti.Common.pushEventAnalytics
+import io.me.ndk.adsconfig.util.Utils.lovinSplashInterstitial
 import kotlinx.android.synthetic.main.activity_splash_screen.*
-import kotlinx.coroutines.*
 import java.io.File
 
 
 class SplashScreen : AppCompatActivity() {
     private var mFile: File? = null
     private var mStorageUtils: StorageUtils? = null
-    private lateinit var lovinSplashInterstitial: LovinInterstitialAds
-    private lateinit var lovinBannerAds: LovinBannerAds
     private var pageNum = -1
+    var checkShow = false
+    var checkLoad = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -55,21 +54,34 @@ class SplashScreen : AppCompatActivity() {
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun initAds(){
+    private fun initAds() {
         lovinSplashInterstitial = LovinInterstitialAds(this)
-        lovinBannerAds = LovinBannerAds(this)
-        lovinSplashInterstitial.loadAndShowInterstitialAd(getString(R.string.applovin_interstitial_splash_ids),
+        lovinSplashInterstitial!!.loadAndShowInterstitialAd(getString(R.string.applovin_interstitial_main_ids),
             isRemoteConfigActive = true,
-            isAppPurchased = false, mListener = object: LovinInterstitialOnCallBack {
-                override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {}
+            isAppPurchased = false, mListener = object : LovinInterstitialOnCallBack {
+                override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
+                    launchMain()
+                }
 
-                override fun onAdLoaded(maxAd: MaxAd?) {}
+                override fun onAdLoaded(maxAd: MaxAd?) {
+                    checkLoad = true
+                    if (checkShow) {
+                        lovinSplashInterstitial?.showInterstitialAds()
+                    }
+                    Log.e("", "")
+                }
 
-                override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {}
+                override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
+                    Log.e("", "")
+                }
 
-                override fun onAdDisplayed(maxAd: MaxAd?) {}
+                override fun onAdDisplayed(maxAd: MaxAd?) {
+                    Log.e("", "")
+                }
 
-                override fun onAdClicked(maxAd: MaxAd?) {}
+                override fun onAdClicked(maxAd: MaxAd?) {
+                    Log.e("", "")
+                }
 
                 override fun onAdHidden(maxAd: MaxAd?) {
                     launchMain()
@@ -78,12 +90,15 @@ class SplashScreen : AppCompatActivity() {
     }
 
     private fun intentMethod() {
-        lovinSplashInterstitial.showInterstitialAds()
+        checkShow = true
+        if (checkLoad)
+            lovinSplashInterstitial?.showInterstitialAds()
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        lovinSplashInterstitial.destroyInterstitialAds()
+        lovinSplashInterstitial?.destroyInterstitialAds()
     }
 
     private fun launchMain() {
@@ -101,24 +116,27 @@ class SplashScreen : AppCompatActivity() {
             } catch (e: Exception) {
                 finish()
             }
-        }
-        else {
-             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 if (Environment.isExternalStorageManager()) {
                     val mIntent = Intent(this, MainActivity::class.java)
                     startActivity(mIntent)
-                }else{
+                } else {
                     val mIntent = Intent(this, IntroductionActivity::class.java)
                     startActivity(mIntent)
                 }
             } else {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
 
                         val mIntent = Intent(this, MainActivity::class.java)
                         startActivity(mIntent)
 
-                    }else{
+                    } else {
                         val mIntent = Intent(this, IntroductionActivity::class.java)
                         startActivity(mIntent)
                     }

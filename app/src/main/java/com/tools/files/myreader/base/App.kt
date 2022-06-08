@@ -1,10 +1,8 @@
 package com.tools.files.myreader.base
 
-import android.app.Activity
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
-import com.facebook.appevents.AppEventsLogger
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.ktx.Firebase
@@ -17,8 +15,6 @@ import com.tools.files.myreader.R
 import com.tools.files.myreader.ulti.Common.loadData
 
 import com.artifex.sonui.MainApp
-import com.tools.files.myreader.adsconfig.LovinBannerAds
-import com.tools.files.myreader.adsconfig.LovinInterstitialAds
 
 class App : MainApp(){
 

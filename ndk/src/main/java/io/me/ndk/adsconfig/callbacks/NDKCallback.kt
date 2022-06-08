@@ -1,4 +1,4 @@
-package com.tools.files.myreader.adsconfig.callbacks
+package io.me.ndk.adsconfig.callbacks
 
 import com.applovin.mediation.MaxAd
 

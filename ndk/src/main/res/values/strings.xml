@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="applovin_sdk_key" translatable="false">TndDWndTkyTTcxDyePU40iwlezff9xVe_dNEatx6mFG2N3hkezhZmaJfWBIXLUw8DTLzffBewS7TMLsIB1_uSd</string>
+
+    <string name="applovin_interstitial_main_ids" translatable="false">10d5e4142607ad59</string>
+
+
+    <string name="applovin_small_native_ids" translatable="false">b84dc9cac8eda4d4</string>
+    <string name="applovin_small_native_small_ids" translatable="false">788765ce924915fa</string>
+
+
+    <string name="applovin_banner_ids" translatable="false">eba35c18d818c6bb</string>
+
+
+
+
+
+</resources>
+

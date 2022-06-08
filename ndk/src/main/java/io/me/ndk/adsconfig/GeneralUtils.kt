@@ -1,4 +1,4 @@
-package com.tools.files.myreader.adsconfig
+package io.me.ndk.adsconfig
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -10,11 +10,14 @@ object GeneralUtils {
 
     const val AD_TAG = "AdsInformation"
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun isInternetConnected(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val nw = connectivityManager.activeNetwork ?: return false
+        val nw = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            connectivityManager.activeNetwork ?: return false
+        } else {
+            return true
+        }
         val actNw = connectivityManager.getNetworkCapabilities(nw) ?: return false
         return when {
             actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
