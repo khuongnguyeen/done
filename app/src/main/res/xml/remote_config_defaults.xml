@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>show_ad_in_view_file</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>show_ad_in_list_files</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>show_ad_in_loading</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>show_ad_in_list_files_count</key>
+        <value>3</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

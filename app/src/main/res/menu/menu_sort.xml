@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/sort_name_a_z"
+            android:title="@string/sort_name_a_z" />
+        <item
+            android:id="@+id/sort_name_z_a"
+
+            android:title="@string/sort_name_z_a" />
+        <item
+            android:id="@+id/sort_size"
+
+            android:title="@string/sort_size" />
+        <item
+            android:id="@+id/sort_date"
+
+            android:title="@string/sort_date" />
+<!--        <item-->
+<!--            android:id="@+id/other_applications"-->
+<!--            android:icon="@drawable/ic_devices_other_black_24dp"-->
+<!--            android:title="@string/other_application" />-->
+<!--        <item-->
+<!--            android:id="@+id/share"-->
+<!--            android:icon="@drawable/ic_share_black_24dp"-->
+<!--            android:title="@string/share_app" />-->
+
+</menu>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="3dp"
+    android:elevation="@dimen/cards"
+    android:padding="@dimen/imageview_padiing"
+    android:translationZ="2dp"
+    app:cardCornerRadius="@dimen/ui_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ct_sl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/primaryTabColor">
+
+        <RelativeLayout
+            android:id="@+id/relitive_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_image_pdf"
+                android:layout_width="@dimen/pdf_icon_size"
+                android:layout_height="@dimen/pdf_icon_size"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="8dp"
+                android:padding="5dp"
+                android:background="@drawable/bg_item_pdf"
+                android:src="@drawable/ui_pdf_file_icon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingLeft="@dimen/textview_marging_LR"
+            android:text="@string/app_name"
+            android:textColor="@color/ui_black"
+            android:textSize="@dimen/text_size_file_name"
+            app:layout_constraintBottom_toTopOf="@+id/item_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relitive_layout" />
+
+        <TextView
+            android:id="@+id/item_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/item_name"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="@dimen/textview_marging_LR"
+            android:text="4.5kb"
+            android:textColor="@color/ui_black"
+            android:textSize="@dimen/text_size_file"
+            app:layout_constraintEnd_toStartOf="@+id/item_ok"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+        <ImageView
+            android:id="@+id/item_ok"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="3dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bgr_tick"
+            android:padding="5dp"
+            android:src="@drawable/tick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

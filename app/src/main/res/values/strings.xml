@@ -1,0 +1,256 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name"> &#128218; Documents Reader</string>
+    <string name="nav_open">Drawer layout open</string>
+    <string name="nav_close">Drawer layout close</string>
+    <string name="recent">Recent</string>
+    <string name="history">History</string>
+    <string name="category">Category</string>
+    <string name="preview">Preview</string>
+    <string name="no_data">No data</string>
+    <string name="read_pages">Read %1$s/%2$s pages</string>
+    <string name="loading_view">Loading....</string>
+    <string name="loading_data">Loading data....</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="rename">Rename</string>
+    <string name="not_application_share">Don\'t have any application to share</string>
+    <string name="rename_file">Rename file</string>
+    <string name="yes">Yes</string>
+    <string name="search_file">Search</string>
+    <string name="exit1">Click again to exit!</string>
+    <string name="text_evaluate">Rate And Review Us !!</string>
+    <string name="sort_name_a_z">Sort by A - Z</string>
+    <string name="sort_name_z_a">Sort by Z - A</string>
+    <string name="sort_size">Sort by size</string>
+    <string name="sort_date">Sort by date</string>
+    <string name="other_application">More Apps</string>
+    <string name="share_app">Share App</string>
+    <string name="buy_advertising">Remove Ad</string>
+    <string name="about">About</string>
+    <string name="from_feedback">From Adtrue Global <br>Tap on Email to send suggestion or feedback.Thanks</br></string>
+    <string name="email">monster@true.ad</string>
+    <string name="home">Home</string>
+    <string name="sort">Sort</string>
+    <string name="delete_recent_dialog">Delete from recent file?</string>
+    <string name="version">Version : %1$s</string>
+    <string name="hide_file">Hide file</string>
+    <string name="epub">EPUB</string>
+    <string name="text">TEXT</string>
+    <string name="fb2">FB2</string>
+    <string name="other_settings">Other settings</string>
+    <string name="hozrizontal_scroll">Horizontal scroll</string>
+    <string name="grid_mode">Grid mode</string>
+    <string name="setting">Setting</string>
+    <string name="no_network_connection_toast">No network connection found</string>
+    <string name="error_color_code">This color code is currently defective. Please choose another color code. Thanks</string>
+    <string name="no_recent_file">No recent file!</string>
+    <string name="first_time_using_the_app">Look like this is your first time using the app</string>
+    <string name="no_file_found">No file found!</string>
+    <string name="not_available">Content is not available for this document</string>
+    <string name="go_feedback" translatable="false">Please tell us why you are dissatisfied with this app, which helps us to quickly fix problems.</string>
+    <string name="go_dismiss" translatable="false">Hope you enjoy using this app!</string>
+    <string name="go_store" translatable="false">Fantastic, please select 5 stars and let everyone know you are satisfied with this app, this action will make it easier for others to choose to install the app and give us the motivation to develop more features.</string>
+    <string name="done" translatable="false">Rate Now</string>
+    <string name="done2" translatable="false">Done</string>
+    <string name="main_review" translatable="false">From 1 to 5 stars, tell us how you feel about this app?</string>
+    <string name="fab_gotowith">Go to page</string>
+    <string name="fab_snapscreen">Snap screen</string>
+    <string name="fab_share">Share</string>
+    <string name="fab_favourite">Favourite</string>
+    <string name="fab_openwith">Open With</string>
+    <string name="text_msg_pdf_uri_null" translatable="false">File data is empty!</string>
+    <string name="type_your_pass_file" translatable="false" tools:ignore="ExtraTranslation">Type your password</string>
+    <string name="send_via">Send Via</string>
+    <string name="ok">Ok</string>
+    <string name="msg_no_connection_available">No Internet connection available!</string>
+    <string name="text_notify_accept_storage_permission">Please accept storage permission for use this app!</string>
+    <string name="pick_file" tools:ignore="ExtraTranslation">Pick file</string>
+    <string name="toast_pick_file_error" tools:ignore="ExtraTranslation">Unable to pick file. Check status of file manager.</string>
+    <string name="txt_grant_permission">You need to accept some essential permissions needed by Doc Manager to function properly.</string>
+    <string name="txt_are_you_sure">Are you sure?</string>
+    <string name="txt_edit">Rename</string>
+    <string name="cancel">Cancel</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="open_file">Open File</string>
+    <string name="txt_grant_grant">GRANT</string>
+    <string name="txt_grant_exit">EXIT</string>
+    <string name="to">to</string>
+    <string name="page">_Page_</string>
+    <string name="created">Created</string>
+    <string name="merging">Merging</string>
+    <string name="splitting">Splitting</string>
+    <string name="merge_failed">Merge failed</string>
+    <string name="extracting">Extracting</string>
+    <string name="hundred_percent">100%</string>
+    <string name="reduced_from">reduced from</string>
+    <string name="converting">Converting</string>
+    <string name="image_extracted">Image extracted</string>
+    <string name="file_protected_unprotect">The file is protected, please unprotect</string>
+    <string name="open_directory">Open directory</string>
+    <string name="page_to_image">Creating page image</string>
+    <string name="failed_low_memory">Fail low memory</string>
+    <string name="enter_file_name">Enter file name</string>
+    <string name="invalid_file_name">Error file name</string>
+    <string name="where_image">Where would you like to choose the image?</string>
+    <string name="the_file_could_not_be_found">The file could not be found. It may have been deleted or renamed</string>
+    <string name="can_not_share_when_loading_file_fails">Can\'t share when loading file fails</string>
+    <string name="error_page_number">error page number</string>
+    <string name="do_not_have_any_application_to_share">Don\'t have any application to share</string>
+    <string name="you_have_not_selected_the_file_to_merge">You have not selected the file to merge</string>
+
+    <string name="time_out_waiting_to_lock_camera_opening">Time out waiting to lock camera opening.</string>
+    <string name="ONESIGNAL_APP_ID" translatable="false">428ff517-b427-427e-9796-063fa103890c</string>
+    <string name="sdk_applovin_key" translatable="false">zq2X1FfdfeIMOsmepidyMNbeqvHKzJyNwy6EI2lT_14Ns_yAy-XVUTSsThDAZ5-AqDJ2OU0CLSeP7euEiV4wor</string>
+    <string name="ok_label">Ok</string>
+    <string name="error_label">Error</string>
+    <string name="photo_saved">Photo has been saved to Camera</string>
+   
+    <string name="facebook_app_id" translatable="false">296760465251845</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb296760465251845</string>
+    <string name="license_key" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkaRhnYxEECTnCt+KdQy5gmtD6njSLcLYbbtNHSer117RgPJ/3L/HAA/CDjqd3zmp+F3ZUhS0VwwAYGOnTc5YO4rjHWbg6cLbiYKEhbqcKPkQ5YWcSgjk/YNeA+IviNQ9RbMRk/M7fZxYCu/pGrUUWvccHZfhG61RGyaM+MlyoobPSzLDyjobDfNVYsXVWR+n+XNoG1wgPnUsBmK85ixiAEwrjFUdEJGIvfPV+yYhbD7pR3+fNmfWTAHwDGe0vLPUnglA4qgxvRAEkU8/ESzbEpQ4SnOzIZ6q5gFfTnhIq7DZXViQ4bLy65jGU7KfKtuF3hvyHn3grIdSwQB5VPru+wIDAQAB</string>
+    <string name="product_id" translatable="false">io.documentreader.filereader.pdfreader</string>
+    <string name="noti">Swipe from right to left to rename or delete!</string>
+    <string name="ex">Excel</string>
+    <string name="ppint">Power Point</string>
+    <string name="text1">Text</string>
+    <string name="pd">PDF</string>
+    <string name="favou">Favourite</string>
+    <string name="title_tab_all_file">All Files</string>
+    <string name="title_tab_recent_file">Recent</string>
+    <string name="search_title">Search</string>
+    <string name="settings_title">Setting</string>
+    <string name="intro">About</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="notice">Third Party Notice</string>
+    <string name="zoom_mode">Hide Zoom Controls</string>
+    <string name="swipe_mode">Swipe Page by Page</string>
+    <string name="scroll_mode">Horizoltal Scroll</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="mn_rd_full_screen">Full Screen</string>
+    <string name="mn_rd_file_sharing">File sharing</string>
+    <string name="query_hint">Search</string>
+    <string name="txt_n">\" Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at      http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\"</string>
+    <string name="txt_roomDB">Roomdatabase Coppyright 2019 Google , Inc.</string>
+    <string name="txt_m">Android PdfViewer Coppyright 2017 Bartosz Schiller</string>
+     <string name="delete_file_success">delete File success</string>
+    <string name="error_not_found_file">Error not found File</string>
+    <string name="dialog_message_delete_file">Are you sure to delete</string>
+   <string name="loading">... loading data ...</string>
+    <string name="ed_input_first">p#</string>
+    <string name="tv_display_first">1/2</string>
+   <string name="select">Select</string>
+    <string name="selected">Select</string>
+   <string name="tv_number_of_page">number of pages in this file</string>
+    <string name="invalid_value">Error value Input</string>
+    <string name="drag_drop_to_organize_files">Drag and drop to organize files. Click on a file to delete</string>
+    <string name="organize_files">Organize Files</string>
+    <string name="remove">Remove</string>
+    <string name="at_least_two_files">You need at least two files to merge</string>
+   <string name="add_file">Add file</string>
+    <string name="select_file">Select file</string>
+    <string name="view_image">View Image</string>
+    <string name="password_protect_pdf_text">Password Protect PDF</string>
+    <string name="txt_pdf_tools">PDFTools</string>
+    <string name="split_pdf">Split PDF</string>
+    <string name="merge_pdf">Merge PDF</string>
+    <string name="extract_img">Extract Image</string>
+    <string name="extract_txt">Extract text</string>
+    <string name="img_to_pdf">Images to PDF</string>
+    <string name="pdf_to_img">PDF to Images</string>
+    <string name="compress_pdf">Compress PDF</string>
+    <string name="remove_duplicate_pages">Remove Ducalicate Pages</string>
+    <string name="tool">Tool PDF</string>
+   <string name="image_quality">Image quality</string>
+    <string name="extract">EXTRACT</string>
+    <string name="compressing">Compressing</string>
+   <string name="compress_lv">Compress Level</string>
+    <string name="compress">COMPRESS</string>
+    <string name="select_at_least_one_image">Select at least one image</string>
+    <string name="drag_drop_to_organize">Drag and drop to organize pages. Click on a page to delete</string>
+    <string name="organize_pages">Organize Pages</string>
+    <string name="no_data_currently_available">No files have been viewed recently</string>
+    <string name="load_av">Loading AdView .....</string>
+    <!--    <string name="new_data">You have just updated the new data</string>-->
+    <string name="new_data">updated data</string>
+   <string name="invalid_number">Invalid number</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="flash">Flash</string>
+    <string name="title_activity_view_edit">ViewEditActivity</string>
+    <string name="next_page">&gt;</string>
+    <string name="previous_page">&lt;</string>
+    <string name="please_enter_a_name_for_the_pdf">Please enter a name for the PDF</string>
+   <string name="name">Name</string>
+    <string name="enter_name_for_pdf">Enter name for pdf</string>
+    <string name="submit">Submit</string>
+    <string name="thumbnail">thumbnail</string>
+   <string name="view">View</string>
+    <string name="a_draggable_corner">A draggable corner</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="scanning">Scanning</string>
+    <string name="scan">Next</string>
+    <string name="cantCrop">Can\'t crop the image, change the points</string>
+    <string name="applying_filter">Loading . . . </string>
+    <string name="low_memory">Low Memory</string>
+    <string name="low_memory_message">Your phone is low on memory, you may feel some lags while editing images.</string>
+    <string name="more">See more &#8230;</string>
+    <string name="finish_skip">Finish / Skip</string>
+    <string name="title_activity_p_d_f_view">IScan PDF Viewer</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="pdfmime">application/pdf</string>
+
+    <string name="ui_merge_pdf">Merge PDF</string>
+    <string name="ui_split_pdf">Split PDF</string>
+    <string name="ui_pdf_to_image">PDF to Image</string>
+    <string name="ui_image_to_pdf">Image to PDF</string>
+    <string name="ui_compress_pdf">Compress PDF</string>
+    <string name="ui_camera_scanner">Camera Scanner</string>
+    <string name="ui_extract_image">Extract Image</string>
+
+    <string name="no">No</string>
+
+    <string name="rationale_camera">This app needs access to your camera so you can take pictures.</string>
+    <string name="returned_from_app_settings_to_activity">
+        Returned from app settings to MainActivity with the following permissions:
+        \n\nCamera: %s
+    </string>
+    <string name="all_file">All File</string>
+    <string name="pdf">PDF</string>
+    <string name="word">Word</string>
+    <string name="excel">Excel</string>
+    <string name="power_point">Power Point</string>
+    <string name="text_1">Text</string>
+    <string name="zip_rar">Zip/Rar</string>
+    <string name="favourite">Favourites</string>
+    <string name="premium_member">Premium Member</string>
+    <string name="try_vip_member_nno_ads_and_best_experience">Try VIP Member <br>No Ads and best experience</br></string>
+    <string name="upgrade_now">Upgrade Now</string>
+    <string name="pdf_tools">Document Tools</string>
+    <string name="camera_scanner">Scanner</string>
+    <string name="pdf_to_image">PDF to Img</string>
+    <string name="image_to_pdf">Img to PDF</string>
+
+
+    <string name="you_have_not_selected_any_photos_yet" translatable="false">You have not selected any photos yet</string>
+    <string name="back_to_home" translatable="false">Back to home</string>
+    
+    <string name="applovin_sdk_key" translatable="false">TndDWndTkyTTcxDyePU40iwlezff9xVe_dNEatx6mFG2N3hkezhZmaJfWBIXLUw8DTLzffBewS7TMLsIB1_uSd</string>
+
+    <string name="applovin_interstitial_main_ids" translatable="false">10d5e4142607ad59</string>
+    <string name="applovin_small_native_ids" translatable="false">b84dc9cac8eda4d4</string>
+    <string name="applovin_banner_ids" translatable="false">eba35c18d818c6bb</string>
+    <string name="applovin_interstitial_splash_ids" translatable="false">10d5e4142607ad59</string>
+    <string name="applovin_splash_native_ids" translatable="false">b84dc9cac8eda4d4</string>
+
+
+
+</resources>

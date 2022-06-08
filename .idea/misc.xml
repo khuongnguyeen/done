@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ASMSmaliIdeaPluginConfiguration">
+    <asm skipDebug="true" skipFrames="true" skipCode="true" expandFrames="true" />
+    <groovy codeStyle="LEGACY" />
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/drawable/bg_ads_by_me.xml" value="0.1275" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/activity_splash_screen.xml" value="0.371875" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/custom_native.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/fragment_file_list.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/item_native_recycle_view.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/item_recycle_view.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/loading_ad.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/sodk_editor_excel_document.xml" value="0.18" />
+        <entry key="..\:/Users/Admin/Downloads/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/pdf-38ceea5828f76c1e528b2ef0e15c401885769d47/app/src/main/res/layout/sodk_editor_powerpoint_document.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
