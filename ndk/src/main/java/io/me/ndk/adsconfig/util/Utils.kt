@@ -1,6 +1,7 @@
 package io.me.ndk.adsconfig.util
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.widget.FrameLayout
@@ -37,10 +38,9 @@ object Utils {
 
 
     fun loadNativeBan(context: Context,id:String, adsContainerLayout: LinearLayout, nativeAdContainer: FrameLayout, loadingFrameLayout: FrameLayout){
-        lovinCoverAds!!.loadNative(adsContainerLayout,
-            nativeAdContainer,
-            loadingFrameLayout,
-            id,
+
+        lovinCoverAds = LovinCoverAds(context as Activity)
+        lovinCoverAds!!.loadNative(adsContainerLayout, nativeAdContainer, loadingFrameLayout, id,
             true,
             false,
             object : LovinNativeCallBack {

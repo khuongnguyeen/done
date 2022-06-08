@@ -36,7 +36,6 @@ class FileListActivity : BaseActivity() {
         initView()
         val editTextSearch = findViewById<EditText>(R.id.edt_activity_main__search2)
         editTextSearch.addTextChangedListener(textWatcher)
-        lovinCoverAds = LovinCoverAds(this)
         // load small native
         Utils.loadNativeBan(this,getString(io.me.ndk.R.string.applovin_small_native_ids),native_ads_container_layout, native_ad_container, native_loading_layout)
     }
